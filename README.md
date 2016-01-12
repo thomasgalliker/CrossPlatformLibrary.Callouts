@@ -19,10 +19,11 @@ callout.Show("Simple Callout", "Message with some text.");
 ```
 
 #### Show message box with custom content
-If you want to show more sophisticated content in the message box, you can do so by passing UI elements to the content parameter. If you use `ICallout` in an MVVM scenario, it is maybe necessary to resolve and inject the visual content using a navigation service.
+If you want to show more sophisticated content in the message box, you can pass UI elements to the content parameter.
 ```csharp
 ICallout callout = SimpleIoc.Default.GetInstance<ICallout>(); // Use dependency injection if possible
 
+// Create custom message box content
 var panel = new StackPanel();
 var textblock = new TextBlock { Text = "This is a short message.", TextWrapping = TextWrapping.Wrap };
 panel.Children.Add(textblock);
@@ -31,6 +32,7 @@ var checkBox = new CheckBox { Content = "Agree" };
 checkBox.Checked += (o, args) => { /* Do something when checked */ };
 panel.Children.Add(checkBox);
 
+// Specify message box buttons
 var buttonConfigs = new[] 
 { 
     new ButtonConfig("I Agree", () => { /* Do something when button is pressed */  }),
@@ -38,6 +40,22 @@ var buttonConfigs = new[]
 };
 
 callout.Show("Content Callout", panel, buttonConfigs);
+```
+However, if you use `ICallout` in an MVVM scenario you may want to resolve and inject the visual content using a navigation service. (You don't want the ViewModel to know about visual elements).
+```csharp
+ICallout callout = SimpleIoc.Default.GetInstance<ICallout>(); // Use dependency injection if possible
+
+// Resolve and inject custom message box content
+var resolvedContent = this.NavigationService.Resolve(new Uri("/Views/CustomMessageBox.xaml"));
+
+// Specify message box buttons
+var buttonConfigs = new[] 
+{ 
+    new ButtonConfig("I Agree", () => { /* Do something when button is pressed */  }),
+    new ButtonConfig("I Decline")
+};
+
+callout.Show("Content Callout", resolvedContent, buttonConfigs);
 ```
 
 ### License
