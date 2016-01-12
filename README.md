@@ -11,7 +11,7 @@ You can use this library in any .Net project which is compatible to PCL (e.g. Xa
 ### API Usage
 CrossPlatformLibrary.Callouts provides a simple and platform-agnostic interface, ```ICallout``` which can be used to show message boxes on the target platform:
 
-```
+```csharp
 ICallout callout = new Callout(); // Get instance from IoC container via dependency injection, if possible
 callout.Show(caption: "Warning", content: "");
 ```
