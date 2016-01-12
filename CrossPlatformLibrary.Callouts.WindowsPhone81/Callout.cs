@@ -14,6 +14,7 @@ namespace CrossPlatformLibrary.Callouts
         /// <inheritdoc />
         public override void Show(string caption, object content, ButtonConfig[] buttonConfigs, bool isFullScreen = false)
         {
+            //http://www.reflectionit.nl/blog/2015/windows-10-xaml-tips-messagedialog-and-contentdialog
             //http://www.kunal-chowdhury.com/2013/02/win8dev-tutorial-windows-store-winrt-messagedialog.html
             //https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx
             //ContentDialog contentDialog = new ContentDialog(); == TODO CHeck for examples 
