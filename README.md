@@ -14,14 +14,14 @@ CrossPlatformLibrary.Callouts provides a simple and platform-agnostic interface,
 #### Show message box with plain text
 The most simple way of showing a message box is shown in the follwing example:
 ```csharp
-ICallout callout = SimpleIoc.Default.GetInstance<ICallout>();
+ICallout callout = SimpleIoc.Default.GetInstance<ICallout>(); // Use dependency injection if possible
 callout.Show("Simple Callout", "Message with some text.");
 ```
 
 #### Show message box with custom content
 If you want to show more sophisticated content in the message box, you can do so by passing UI elements to the content parameter. If you use `ICallout` in an MVVM scenario, it is maybe necessary to resolve and inject the visual content using a navigation service.
 ```csharp
-ICallout callout = SimpleIoc.Default.GetInstance<ICallout>();
+ICallout callout = SimpleIoc.Default.GetInstance<ICallout>(); // Use dependency injection if possible
 
 var panel = new StackPanel();
 var textblock = new TextBlock { Text = "This is a short message.", TextWrapping = TextWrapping.Wrap };
