@@ -46,7 +46,7 @@ However, if you use `ICallout` in an MVVM scenario you may want to resolve and i
 ICallout callout = SimpleIoc.Default.GetInstance<ICallout>(); // Use dependency injection if possible
 
 // Resolve and inject custom message box content
-var resolvedContent = this.NavigationService.Resolve(new Uri("/Views/CustomMessageBox.xaml"));
+var resolvedContent = this.NavigationService.Resolve(new Uri("/Views/CustomMessageBox"));
 
 // Specify message box buttons
 var buttonConfigs = new[] 
