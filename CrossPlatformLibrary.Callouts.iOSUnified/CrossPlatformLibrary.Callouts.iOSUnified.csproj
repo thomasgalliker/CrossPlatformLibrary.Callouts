@@ -37,6 +37,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\CrossPlatformLibrary.Callouts.iOS\Callout.cs">
+      <Link>Callout.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -37,6 +37,7 @@
     <DefineConstants>TRACE;__MOBILE__;__IOS__;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Callout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
