@@ -82,6 +82,8 @@ namespace CrossPlatformLibrary.Callouts
                         default:
                             break;
                     }
+
+                    messageBox.Content = null; // This is to avoid ArgumentException 'Value does not fall within the expected range'
                 };
 
             Deployment.Current.Dispatcher.BeginInvoke(() => { messageBox.Show(); });

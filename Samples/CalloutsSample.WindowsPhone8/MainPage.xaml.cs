@@ -10,32 +10,36 @@ namespace CalloutsSample.WindowsPhone8
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private readonly ICallout callout;
+        private StackPanel panel;
+
         public MainPage()
         {
             this.InitializeComponent();
+            this.callout = SimpleIoc.Default.GetInstance<ICallout>();
         }
 
         private void Button_OnClick_SimpleCallout(object sender, RoutedEventArgs e)
         {
-            var callout = SimpleIoc.Default.GetInstance<ICallout>();
-            callout.Show("Simple Callout", "Message with some text.");
+            this.callout.Show("Simple Callout", "Message with some text.");
         }
 
         private void Button_OnClick_ContentCallout(object sender, RoutedEventArgs e)
         {
-            var callout = SimpleIoc.Default.GetInstance<ICallout>();
+            // Create a reusable UI control
+            if (this.panel == null)
+            {
+                this.panel = new StackPanel();
+                this.panel.Children.Add(new TextBlock { Text = "This is a short message.", TextWrapping = TextWrapping.Wrap, });
 
-            var panel = new StackPanel();
-
-            panel.Children.Add(new TextBlock { Text = "This is a short message.", TextWrapping = TextWrapping.Wrap, });
-
-            var checkBox = new CheckBox { Content = "Agree" };
-            checkBox.Checked += (o, args) => { };
-            panel.Children.Add(checkBox);
+                var checkBox = new CheckBox { Content = "Agree" };
+                checkBox.Checked += (o, args) => { };
+                this.panel.Children.Add(checkBox);
+            }
 
             var buttonConfigs = new[] { new ButtonConfig("I Agree", () => { }), new ButtonConfig("I Decline") };
 
-            callout.Show("Content Callout", panel, buttonConfigs);
+            this.callout.Show("Content Callout", this.panel, buttonConfigs);
         }
     }
 }
