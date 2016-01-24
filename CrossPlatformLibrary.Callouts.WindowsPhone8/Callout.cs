@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 
 using Guards;
 
@@ -13,6 +14,11 @@ namespace CrossPlatformLibrary.Callouts
     /// </summary>
     public class Callout : CalloutBase
     {
+        public Callout()
+        {
+            this.MaxNumberOfButtons = 2;
+        }
+
         /// <inheritdoc />
         public override void Show(string caption, object content, ButtonConfig[] buttonConfigs, bool isFullScreen = false)
         {
@@ -21,16 +27,10 @@ namespace CrossPlatformLibrary.Callouts
             ButtonConfig leftButton = null;
             ButtonConfig rightButton = null;
 
-            if (buttonConfigs.Length < 1 || buttonConfigs.Length > 2)
+            if (buttonConfigs.Length < this.MinNumberOfButtons || buttonConfigs.Length > this.MaxNumberOfButtons)
             {
-                throw new ArgumentException("'buttonConfigs' only supports ");
+                throw new ArgumentException(string.Format("'buttonConfigs' supports a minimum of {0} and a maximum of {1} buttons", this.MinNumberOfButtons, this.MaxNumberOfButtons));
             }
-
-            //var hyperlinkButton = content as HyperlinkButton;
-            //if (hyperlinkButton != null)
-            //{
-            //    TiltEffect.SetIsTiltEnabled(hyperlinkButton, true);
-            //}
 
             var messageBox = new CustomMessageBox
             {
@@ -57,6 +57,12 @@ namespace CrossPlatformLibrary.Callouts
             }
             else
             {
+                ////var hyperlinkButton = content as HyperlinkButton;
+                ////if (hyperlinkButton != null)
+                ////{
+                ////    TiltEffect.SetIsTiltEnabled(hyperlinkButton, true);
+                ////}
+
                 messageBox.Message = null;
                 messageBox.Content = content;
             }
