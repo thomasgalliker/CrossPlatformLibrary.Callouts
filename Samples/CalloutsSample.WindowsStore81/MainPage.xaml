@@ -9,6 +9,6 @@
 
     <StackPanel Background="Crimson" HorizontalAlignment="Stretch" VerticalAlignment="Center" >
         <Button Content="Show simple callout" Click="Button_OnClick_SimpleCallout" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top"/>
-        <Button Content="Show content callout" Click="Button_OnClick_ContentCallout" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top"/>
+        <Button Content="Show content callout" Click="Button_OnClick_ContentCallout" HorizontalAlignment="Left" Margin="7,7,0,7" VerticalAlignment="Top"/>
     </StackPanel>
 </Page>
