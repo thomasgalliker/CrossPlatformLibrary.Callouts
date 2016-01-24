@@ -2,6 +2,16 @@
 {
     public abstract class CalloutBase : ICallout
     {
+        protected CalloutBase()
+        {
+            this.MinNumberOfButtons = 1;
+            this.MaxNumberOfButtons = int.MaxValue;
+        }
+
+        public int MinNumberOfButtons { get; private set; }
+
+        public int MaxNumberOfButtons { get; protected set; }
+
         /// <inheritdoc />
         public void Show(string caption, object content)
         {

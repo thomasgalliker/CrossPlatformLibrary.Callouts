@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
-using Android;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
 using Android.Util;
 using Android.Views;
-using Android.Widget;
 
 using CrossPlatformLibrary.Dispatching;
 
@@ -14,10 +10,8 @@ using Guards;
 
 using Java.Lang;
 using Java.Lang.Reflect;
-using Java.Util;
 
 using Exception = System.Exception;
-using Object = System.Object;
 
 namespace CrossPlatformLibrary.Callouts
 {
@@ -33,6 +27,7 @@ namespace CrossPlatformLibrary.Callouts
             Guard.ArgumentNotNull(() => dispatcherService);
 
             this.dispatcherService = dispatcherService;
+            this.MaxNumberOfButtons = 3;
         }
 
         /// <inheritdoc />
@@ -40,10 +35,35 @@ namespace CrossPlatformLibrary.Callouts
         {
             Guard.ArgumentNotNull(() => buttonConfigs);
 
+            ButtonConfig positiveButton = null;
+            ButtonConfig negativeButton = null;
+            ButtonConfig neutralButton = null;
+
+            if (buttonConfigs.Length < this.MinNumberOfButtons || buttonConfigs.Length > this.MaxNumberOfButtons)
+            {
+                throw new ArgumentException(string.Format("'buttonConfigs' supports a minimum of {0} and a maximum of {1} buttons", this.MinNumberOfButtons, this.MaxNumberOfButtons));
+            }
+
             var currentActivity = GetActivity();
             var alert = new AlertDialog.Builder(currentActivity);
             alert.SetTitle(caption);
-            alert.SetCancelable(false);
+            alert.SetCancelable(isFullScreen);
+
+            if (buttonConfigs.Length >= 1)
+            {
+                positiveButton = buttonConfigs[0];
+                alert.SetPositiveButton(positiveButton.Text, (senderAlert, args) => { positiveButton.Action(); });
+            }
+            if (buttonConfigs.Length >= 2)
+            {
+                negativeButton = buttonConfigs[1];
+                alert.SetNegativeButton(negativeButton.Text, (senderAlert, args) => { negativeButton.Action(); });
+            }
+            if (buttonConfigs.Length == 3)
+            {
+                neutralButton = buttonConfigs[2];
+                alert.SetNeutralButton(neutralButton.Text, (senderAlert, args) => { neutralButton.Action(); });
+            }
 
             var stringContent = content as string;
             if (stringContent != null)
@@ -57,25 +77,22 @@ namespace CrossPlatformLibrary.Callouts
                 alert.SetView(viewContent);
             }
 
-            foreach (var buttonConfig in buttonConfigs)
-            {
-                var config = buttonConfig;
-                alert.SetPositiveButton(buttonConfig.Text, (senderAlert, args) => { config.Action(); });
-                ////alert.SetNegativeButton(buttonConfig.Text, (senderAlert, args) => { config.Action(); });
-                ////alert.SetNeutralButton(buttonConfig.Text, (senderAlert, args) => { config.Action(); });
-            }
-
             // dispatch the alert to the UI thread
             this.dispatcherService.CheckBeginInvokeOnUI(() => alert.Create().Show());
         }
 
+        /// <summary>
+        /// Gets the current activity.
+        /// The inspiration for this code came from here:
+        /// http://stackoverflow.com/questions/11411395/how-to-get-current-foreground-activity-context-in-android
+        /// </summary>
         private static Activity GetActivity()
         {
             Class activityThreadClass = Class.ForName("android.app.ActivityThread");
             Java.Lang.Object activityThread = activityThreadClass.GetMethod("currentActivityThread").Invoke(null);
             var activitiesField = activityThreadClass.GetDeclaredField("mActivities");
             activitiesField.Accessible = true;
-            Android.Util.ArrayMap activities = (Android.Util.ArrayMap)activitiesField.Get(activityThread);
+            ArrayMap activities = (ArrayMap)activitiesField.Get(activityThread);
             foreach (Java.Lang.Object activityRecord in activities.Values())
             {
                 try
