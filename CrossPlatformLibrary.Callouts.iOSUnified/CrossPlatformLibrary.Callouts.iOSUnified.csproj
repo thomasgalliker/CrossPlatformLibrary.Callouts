@@ -40,6 +40,9 @@
     <Compile Include="..\CrossPlatformLibrary.Callouts.iOS\Callout.cs">
       <Link>Callout.cs</Link>
     </Compile>
+    <Compile Include="..\CrossPlatformLibrary.Callouts.iOS\Extensions.cs">
+      <Link>Extensions.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
