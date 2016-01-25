@@ -6,6 +6,7 @@ using Guards;
 
 #if __UNIFIED__
 using UIKit;
+using CoreGraphics;
 #else
 using MonoTouch.UIKit;
 #endif
@@ -32,10 +33,6 @@ namespace CrossPlatformLibrary.Callouts
             Guard.ArgumentNotNull(() => buttonConfigs);
 
             var stringContent = content as string;
-            if (stringContent == null)
-            {
-                throw new NotImplementedException("Content dialogs are not yet supported.");
-            }
 
             if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
             {
@@ -44,9 +41,11 @@ namespace CrossPlatformLibrary.Callouts
                 {
                     alertController.Message = stringContent;
                 }
-                else
+
+                var view = content as UIView;
+                if (view != null)
                 {
-                    // TODO Implement content dialogs
+                    alertController.View.AddSubview(view);
                 }
 
                 foreach (var buttonConfig in buttonConfigs)
@@ -68,9 +67,11 @@ namespace CrossPlatformLibrary.Callouts
                 {
                     alertView.Message = stringContent;
                 }
-                else
+
+                var view = content as UIView;
+                if (view != null)
                 {
-                    // TODO Implement content dialogs
+                    alertView.AddSubview(view);
                 }
 
                 foreach (var buttonConfig in buttonConfigs)
