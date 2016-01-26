@@ -40,17 +40,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.WindowsPhone
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.WindowsPhone81", "Samples\CalloutsSample.WindowsPhone81\CalloutsSample.WindowsPhone81.csproj", "{71033A11-8395-47A6-BD8F-6F0224158332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.Android", "Samples\CalloutsSample\CalloutsSample.Droid\CalloutsSample.Android.csproj", "{140FCBE4-065D-497B-93A9-9B55A5EE1E6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.Forms.Android", "Samples\CalloutsSample\CalloutsSample.Droid\CalloutsSample.Forms.Android.csproj", "{140FCBE4-065D-497B-93A9-9B55A5EE1E6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.iOS", "Samples\CalloutsSample\CalloutsSample.iOS\CalloutsSample.iOS.csproj", "{BC4D35CA-9335-4A75-972C-FA70A0FC0BD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.Forms.iOS", "Samples\CalloutsSample\CalloutsSample.iOS\CalloutsSample.Forms.iOS.csproj", "{BC4D35CA-9335-4A75-972C-FA70A0FC0BD0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.WinPhone", "Samples\CalloutsSample\CalloutsSample.WinPhone\CalloutsSample.WinPhone.csproj", "{17D28ABC-DBFA-46EE-8B02-FCDFD2AC9620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample", "Samples\CalloutsSample\CalloutsSample\CalloutsSample.csproj", "{70A9E1C9-514B-4D5E-8C3C-D511909AFAC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.Forms", "Samples\CalloutsSample\CalloutsSample\CalloutsSample.Forms.csproj", "{70A9E1C9-514B-4D5E-8C3C-D511909AFAC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossPlatformLibrary.Callouts.Netfx", "CrossPlatformLibrary.Callouts.Netfx\CrossPlatformLibrary.Callouts.Netfx.csproj", "{8F55A307-9930-46BB-93F8-16C59F71C8AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutSample.WPF", "Samples\CalloutSample.WPF\CalloutSample.WPF.csproj", "{43FBEC2C-C928-4851-9FA2-DFE6D77B2B66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.WPF", "Samples\CalloutsSample.WPF\CalloutsSample.WPF.csproj", "{43FBEC2C-C928-4851-9FA2-DFE6D77B2B66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
