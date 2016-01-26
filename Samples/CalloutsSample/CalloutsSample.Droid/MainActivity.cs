@@ -2,10 +2,11 @@
 using Android.Content.PM;
 using Android.OS;
 
-using Xamarin.Forms;
+using CrossPlatformLibrary.IoC;
+
 using Xamarin.Forms.Platform.Android;
 
-namespace CalloutsSample.Droid
+namespace CalloutsSample.Forms
 {
     [Activity(Label = "CalloutsSample", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsApplicationActivity
@@ -14,7 +15,9 @@ namespace CalloutsSample.Droid
         {
             base.OnCreate(bundle);
 
-            Forms.Init(this, bundle);
+            SimpleIoc.Default.Register<ICustomCallout, CustomCallout>(); // TODO: Register by convention!
+
+            Xamarin.Forms.Forms.Init(this, bundle);
             this.LoadApplication(new App());
         }
     }

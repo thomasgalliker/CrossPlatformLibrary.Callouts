@@ -1,8 +1,10 @@
 ﻿using System;
 
 using Android.App;
+using Android.Content;
 using Android.Util;
 using Android.Views;
+using Android.Widget;
 
 using CrossPlatformLibrary.Dispatching;
 
@@ -45,40 +47,70 @@ namespace CrossPlatformLibrary.Callouts
             }
 
             var currentActivity = GetActivity();
-            var alert = new AlertDialog.Builder(currentActivity);
-            alert.SetTitle(caption);
-            alert.SetCancelable(isFullScreen);
-
-            if (buttonConfigs.Length >= 1)
-            {
-                positiveButton = buttonConfigs[0];
-                alert.SetPositiveButton(positiveButton.Text, (senderAlert, args) => { positiveButton.Action(); });
-            }
-            if (buttonConfigs.Length >= 2)
-            {
-                negativeButton = buttonConfigs[1];
-                alert.SetNegativeButton(negativeButton.Text, (senderAlert, args) => { negativeButton.Action(); });
-            }
-            if (buttonConfigs.Length == 3)
-            {
-                neutralButton = buttonConfigs[2];
-                alert.SetNeutralButton(neutralButton.Text, (senderAlert, args) => { neutralButton.Action(); });
-            }
+            var alertBuilder = new AlertDialog.Builder(currentActivity);
+            alertBuilder.SetTitle(caption);
+            alertBuilder.SetCancelable(isFullScreen);
 
             var stringContent = content as string;
             if (stringContent != null)
             {
-                alert.SetMessage(stringContent);
+                alertBuilder.SetMessage(stringContent);
             }
 
             var viewContent = content as View;
             if (viewContent != null)
             {
-                alert.SetView(viewContent);
+                alertBuilder.SetView(viewContent);
+            }
+
+            AlertDialog alertDialog = null;
+
+            if (buttonConfigs.Length >= 1)
+            {
+                positiveButton = buttonConfigs[0];
+                alertBuilder.SetPositiveButton(positiveButton.Text, (senderAlert, args) => { positiveButton.Action(); });
+                positiveButton.EnabledChanged += (sender, isEnabled) => { UpdateEnabledChanged(alertDialog, DialogButtonType.Positive, isEnabled); };
+            }
+            if (buttonConfigs.Length >= 2)
+            {
+                negativeButton = buttonConfigs[1];
+                alertBuilder.SetNegativeButton(negativeButton.Text, (senderAlert, args) => { negativeButton.Action(); });
+                negativeButton.EnabledChanged += (sender, isEnabled) => { UpdateEnabledChanged(alertDialog, DialogButtonType.Negative, isEnabled); };
+
+            }
+            if (buttonConfigs.Length == 3)
+            {
+                neutralButton = buttonConfigs[2];
+                alertBuilder.SetNeutralButton(neutralButton.Text, (senderAlert, args) => { neutralButton.Action(); });
+                neutralButton.EnabledChanged += (sender, isEnabled) => { UpdateEnabledChanged(alertDialog, DialogButtonType.Neutral, isEnabled); };
             }
 
             // dispatch the alert to the UI thread
-            this.dispatcherService.CheckBeginInvokeOnUI(() => alert.Create().Show());
+            this.dispatcherService.CheckBeginInvokeOnUI(
+                () =>
+                    {
+                        alertDialog = alertBuilder.Create();
+                        alertDialog.Show();
+
+                        if (positiveButton != null)
+                        {
+                            UpdateEnabledChanged(alertDialog, DialogButtonType.Positive, positiveButton.IsEnabled);
+                        }
+                        if (negativeButton != null)
+                        {
+                            UpdateEnabledChanged(alertDialog, DialogButtonType.Negative, negativeButton.IsEnabled);
+                        }
+                        if (neutralButton != null)
+                        {
+                            UpdateEnabledChanged(alertDialog, DialogButtonType.Neutral, neutralButton.IsEnabled);
+                        }
+                    });
+        }
+
+        private static void UpdateEnabledChanged(AlertDialog alertDialog, DialogButtonType dialogButtonType, bool isEnabled)
+        {
+            var button = alertDialog.GetButton((int)dialogButtonType);
+            button.Enabled = isEnabled;
         }
 
         /// <summary>
