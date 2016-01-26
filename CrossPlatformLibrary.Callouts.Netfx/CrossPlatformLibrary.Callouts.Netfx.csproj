@@ -56,6 +56,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,13 +64,16 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="WPFCustomMessageBox, Version=1.0.7.39267, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WPFCustomMessageBox.1.0.7\lib\WPFCustomMessageBox.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Callout.cs" />
+    <Compile Include="CustomMessageBox\CustomMessageBoxWindow.xaml.cs">
+      <DependentUpon>CustomMessageBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMessageBox\ContentTemplateSelector.cs" />
+    <Compile Include="CustomMessageBox\NullToVisibilityConverter.cs" />
+    <Compile Include="CustomMessageBox\TextAndImage.cs" />
+    <Compile Include="CustomMessageBox\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,7 +83,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CustomMessageBox\CustomMessageBoxWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomMessageBox\blankicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

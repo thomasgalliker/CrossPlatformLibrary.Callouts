@@ -1,11 +1,7 @@
-﻿using System;
-using System.Windows;
-
-using CrossPlatformLibrary.Dispatching;
+﻿
+using CrossPlatformLibrary.Callouts.CustomMessageBox;
 
 using Guards;
-
-using WPFCustomMessageBox;
 
 namespace CrossPlatformLibrary.Callouts
 {
@@ -19,9 +15,8 @@ namespace CrossPlatformLibrary.Callouts
         {
             Guard.ArgumentNotNull(() => buttonConfigs);
 
-            var result = CustomMessageBox.Show(
-                messageBoxText: (string)content, 
-                caption: caption, button: MessageBoxButton.OK);
+            var messageBox = new CustomMessageBoxWindow(caption, content, buttonConfigs, isFullScreen);
+            messageBox.ShowDialog();
         }
     }
 }
