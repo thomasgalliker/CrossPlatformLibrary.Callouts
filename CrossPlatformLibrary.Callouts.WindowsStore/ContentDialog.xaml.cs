@@ -125,6 +125,8 @@ namespace CrossPlatformLibrary.Callouts
 
         public event EventHandler SecondaryButtonClick;
 
+        public event EventHandler Closed;
+
         public void ShowAsync()
         {
             this.ParentPopup.IsOpen = true;
@@ -133,11 +135,13 @@ namespace CrossPlatformLibrary.Callouts
         private void OnPrimaryButtonClick()
         {
             this.PrimaryButtonClick?.Invoke(this, EventArgs.Empty);
+            this.Closed?.Invoke(this, EventArgs.Empty);
         }
 
         private void OnSecondaryButtonClick()
         {
             this.SecondaryButtonClick?.Invoke(this, EventArgs.Empty);
+            this.Closed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

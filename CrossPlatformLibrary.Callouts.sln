@@ -58,7 +58,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossPlatformLibrary.Callou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.UWP", "Samples\CalloutsSample.UWP\CalloutsSample.UWP.csproj", "{14E5991C-F1C7-4C44-8407-BBC99BE19269}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CalloutsSample.WinRT.Shared", "Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.shproj", "{8FEC12E4-2E8E-4F30-AC68-2148BF6BB460}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{8fec12e4-2e8e-4f30-ac68-2148bf6bb460}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|ARM = Ad-Hoc|ARM
@@ -1086,5 +1091,6 @@ Global
 		{70A9E1C9-514B-4D5E-8C3C-D511909AFAC0} = {CF7F4F9A-C237-462C-AC73-B028B77310A3}
 		{43FBEC2C-C928-4851-9FA2-DFE6D77B2B66} = {CF7F4F9A-C237-462C-AC73-B028B77310A3}
 		{14E5991C-F1C7-4C44-8407-BBC99BE19269} = {CF7F4F9A-C237-462C-AC73-B028B77310A3}
+		{8FEC12E4-2E8E-4F30-AC68-2148BF6BB460} = {CF7F4F9A-C237-462C-AC73-B028B77310A3}
 	EndGlobalSection
 EndGlobal

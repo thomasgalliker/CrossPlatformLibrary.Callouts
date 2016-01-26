@@ -1,19 +1,44 @@
 ﻿using System;
+using System.Threading.Tasks;
 
-using Windows.UI.Core;
+using Windows.Foundation;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
+
+using Guards;
 
 namespace CrossPlatformLibrary.Callouts
 {
     public class Callout : CalloutBase
     {
+        public Callout()
+        {
+            this.MaxNumberOfButtons = 2;
+        }
+
         /// <inheritdoc />
         public override void Show(string caption, object content, ButtonConfig[] buttonConfigs, bool isFullScreen = false)
         {
+            Guard.ArgumentNotNull(() => buttonConfigs);
+
+            ButtonConfig primaryButton = null;
+            ButtonConfig secondaryButton = null;
+
+            if (buttonConfigs.Length < this.MinNumberOfButtons || buttonConfigs.Length > this.MaxNumberOfButtons)
+            {
+                throw new ArgumentException(string.Format("'buttonConfigs' supports a minimum of {0} and a maximum of {1} buttons", this.MinNumberOfButtons, this.MaxNumberOfButtons));
+            }
+
+            if (buttonConfigs.Length >= 1)
+            {
+                primaryButton = buttonConfigs[0];
+            }
+
+            if (buttonConfigs.Length == 2)
+            {
+                secondaryButton = buttonConfigs[1];
+            }
+
             //http://www.reflectionit.nl/blog/2015/windows-10-xaml-tips-messagedialog-and-contentdialog
             //http://www.kunal-chowdhury.com/2013/02/win8dev-tutorial-windows-store-winrt-messagedialog.html
             //https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx
@@ -23,57 +48,83 @@ namespace CrossPlatformLibrary.Callouts
             if (stringContent != null)
             {
                 var messageDialog = new MessageDialog(stringContent, caption);
-                foreach (var buttonConfig in buttonConfigs)
+
+                if (primaryButton != null)
                 {
-                    var config = buttonConfig;
-                    messageDialog.Commands.Add(new UICommand(buttonConfig.Text, delegate { config.Action(); }));
+                    messageDialog.Commands.Add(new UICommand(primaryButton.Text, delegate { primaryButton.Action(); }));
+                }
+                if (secondaryButton != null)
+                {
+                    messageDialog.Commands.Add(new UICommand(secondaryButton.Text, delegate { secondaryButton.Action(); }));
                 }
 
                 messageDialog.ShowAsync();
             }
             else
             {
-                ButtonConfig primaryButton = null;
-                ButtonConfig secondaryButton = null;
-
-                if (buttonConfigs.Length < 1 || buttonConfigs.Length > 2)
-                {
-                    throw new ArgumentException("'buttonConfigs' only supports ");
-                }
-
-                var dialog = new ContentDialog
+                var contentDialog = new ContentDialog
                 {
                     Title = caption,
                     //RequestedTheme = ElementTheme.Dark,
-                    //FullSizeDesired = isFullScreen,
+#if WINDOWS_UWP
+                    FullSizeDesired = isFullScreen,
+#endif
                     //MaxWidth = this.ActualWidth // Required for Mobile!
                 };
 
                 var cp = new ContentPresenter();
                 cp.Content = content;
 
-#if NETFX_CORE
-                dialog.Content = cp;
+#if WINDOWS_APP
+                contentDialog.ContentWrapper = cp;
 #else
-                  dialog.ContentWrapper = cp;
+                contentDialog.Content = cp;
 #endif
-
-                if (buttonConfigs.Length >= 1)
+                EventHandler<bool> primaryButtonOnEnabledChanged = null;
+                if (primaryButton != null)
                 {
-                    primaryButton = buttonConfigs[0];
-                    dialog.PrimaryButtonText = primaryButton.Text;
-                    dialog.IsPrimaryButtonEnabled = true;
-                    dialog.PrimaryButtonClick += delegate { primaryButton.Action(); };
-                }
-                if (buttonConfigs.Length == 2)
-                {
-                    secondaryButton = buttonConfigs[1];
-                    dialog.SecondaryButtonText = secondaryButton.Text;
-                    dialog.IsSecondaryButtonEnabled = true;
-                    dialog.SecondaryButtonClick += delegate { secondaryButton.Action(); };
+                    primaryButtonOnEnabledChanged = (sender, isEnabled) => { contentDialog.IsPrimaryButtonEnabled = isEnabled; };
+                    primaryButton.EnabledChanged += primaryButtonOnEnabledChanged;
+                    contentDialog.PrimaryButtonText = primaryButton.Text;
+                    contentDialog.IsPrimaryButtonEnabled = primaryButton.IsEnabled;
+                    contentDialog.PrimaryButtonClick += delegate { primaryButton.Action(); };
                 }
 
-                dialog.ShowAsync();
+                EventHandler<bool> secondaryButtonOnEnabledChanged = null;
+                if (secondaryButton != null)
+                {
+                    secondaryButtonOnEnabledChanged = (sender, isEnabled) => { contentDialog.IsSecondaryButtonEnabled = isEnabled; };
+                    secondaryButton.EnabledChanged += secondaryButtonOnEnabledChanged;
+                    contentDialog.SecondaryButtonText = secondaryButton.Text;
+                    contentDialog.IsSecondaryButtonEnabled = secondaryButton.IsEnabled;
+                    contentDialog.SecondaryButtonClick += delegate { secondaryButton.Action(); };
+                }
+
+#if WINDOWS_APP
+                // Windows Store Apps ContentDialog does not return an async task
+                // when calling ShowAsync(). TaskCompletionSource comes to the rescue!
+                var tcs = new TaskCompletionSource<object>();
+
+                contentDialog.Closed += (sender, args) => { tcs.TrySetResult(null); };
+                contentDialog.ShowAsync();
+
+                var unsubscribeTask = tcs.Task;
+#else
+                var unsubscribeTask = contentDialog.ShowAsync().AsTask();
+#endif
+                unsubscribeTask.ContinueWith(
+                    ct =>
+                    {
+                        if (primaryButton != null && primaryButtonOnEnabledChanged != null)
+                        {
+                            primaryButton.EnabledChanged -= primaryButtonOnEnabledChanged;
+                        }
+
+                        if (secondaryButton != null && secondaryButtonOnEnabledChanged != null)
+                        {
+                            secondaryButton.EnabledChanged -= secondaryButtonOnEnabledChanged;
+                        }
+                    });
             }
         }
     }
