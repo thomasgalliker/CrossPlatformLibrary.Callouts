@@ -59,7 +59,7 @@ namespace CrossPlatformLibrary.Callouts
             {
                 var alertView = new UIAlertView
                 {
-                    AlertViewStyle = UIAlertViewStyle.LoginAndPasswordInput,
+                    AlertViewStyle = UIAlertViewStyle.Default,
                     Title = caption
                 };
 
