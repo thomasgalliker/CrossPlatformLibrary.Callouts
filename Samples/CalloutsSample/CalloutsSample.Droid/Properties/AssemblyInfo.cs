@@ -9,7 +9,7 @@ using Android.App;
 [assembly: AssemblyTitle("CalloutsSample.Droid")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Thomas Galliker")]
 [assembly: AssemblyProduct("CalloutsSample.Droid")]
 [assembly: AssemblyCopyright("Copyright © 2016")]
 [assembly: AssemblyTrademark("")]

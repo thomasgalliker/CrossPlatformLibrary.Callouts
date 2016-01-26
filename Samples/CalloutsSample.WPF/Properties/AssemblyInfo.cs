@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("CalloutsSample.WPF")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Thomas Galliker")]
 [assembly: AssemblyProduct("CalloutsSample.WPF")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
