@@ -52,10 +52,10 @@ namespace CrossPlatformLibrary.Callouts
                 var cp = new ContentPresenter();
                 cp.Content = content;
 
-#if WINDOWS_APP
-                 dialog.ContentWrapper = cp;
-#else
+#if NETFX_CORE
                 dialog.Content = cp;
+#else
+                  dialog.ContentWrapper = cp;
 #endif
 
                 if (buttonConfigs.Length >= 1)
