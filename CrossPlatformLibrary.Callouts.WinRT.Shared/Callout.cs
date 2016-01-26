@@ -1,7 +1,9 @@
 ﻿using System;
-using System.Threading.Tasks;
 
-using Windows.Foundation;
+#if WINDOWS_APP
+using System.Threading.Tasks;
+#endif
+
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 

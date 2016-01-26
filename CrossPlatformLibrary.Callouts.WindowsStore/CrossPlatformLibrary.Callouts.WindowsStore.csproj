@@ -102,9 +102,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\CrossPlatformLibrary.Callouts.WindowsPhone81\Callout.cs">
-      <Link>Callout.cs</Link>
-    </Compile>
     <Compile Include="ContentDialog.xaml.cs">
       <DependentUpon>ContentDialog.xaml</DependentUpon>
     </Compile>
@@ -147,6 +144,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <Import Project="..\CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

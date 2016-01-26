@@ -80,7 +80,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Callout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +113,7 @@
       <Name>CrossPlatformLibrary.Callouts</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

@@ -60,11 +60,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.UWP", "Sampl
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CalloutsSample.WinRT.Shared", "Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.shproj", "{8FEC12E4-2E8E-4F30-AC68-2148BF6BB460}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CrossPlatformLibrary.Callouts.WinRT.Shared", "CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.shproj", "{2FB36559-0417-4600-81A2-9C4E48D5436E}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{8fec12e4-2e8e-4f30-ac68-2148bf6bb460}*SharedItemsImports = 13
 		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{71033a11-8395-47a6-bd8f-6f0224158332}*SharedItemsImports = 4
+		CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems*{2fb36559-0417-4600-81a2-9c4e48d5436e}*SharedItemsImports = 13
+		CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems*{b04a158e-ba6e-4c57-99df-c2a452dc8d71}*SharedItemsImports = 4
+		CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems*{7169373f-0b82-4e5d-9129-7cc3065b90fa}*SharedItemsImports = 4
 		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{c7245abf-c0c0-4cca-a6e3-393cfafe0bfc}*SharedItemsImports = 4
+		CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems*{ed9a4ca1-c04c-457d-9a2e-7995ccf12356}*SharedItemsImports = 4
 		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{14e5991c-f1c7-4c44-8407-bbc99be19269}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
