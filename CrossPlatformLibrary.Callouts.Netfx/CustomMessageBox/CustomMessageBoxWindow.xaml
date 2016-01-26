@@ -70,6 +70,7 @@
                                     Visibility="Visible" 
                                     DockPanel.Dock="Right" 
                                     Click="OnButtonClicked"
+                                    IsEnabled="{Binding IsEnabled}"
                                     Tag="{Binding}">
                                 <Label Content="{Binding Text}" Padding="0" Margin="10,0" />
                             </Button>

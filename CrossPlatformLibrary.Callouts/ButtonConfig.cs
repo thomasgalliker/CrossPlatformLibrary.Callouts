@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CrossPlatformLibrary.Callouts
 {
@@ -6,12 +8,10 @@ namespace CrossPlatformLibrary.Callouts
     /// ButtonConfig is the platform-independent abstraction
     /// of a dialog button.
     /// </summary>
-    public class ButtonConfig
+    public class ButtonConfig : INotifyPropertyChanged
     {
         private bool isEnabled;
-
-        public event EventHandler<bool> EnabledChanged;
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="ButtonConfig"/> class.
         /// </summary>
@@ -44,18 +44,32 @@ namespace CrossPlatformLibrary.Callouts
                 if (this.isEnabled != value)
                 {
                     this.isEnabled = value;
+                    this.OnPropertyChanged();
                     this.OnEnabledChanged(value);
                 }
             }
         }
 
-        ////public bool IsPositive { get; set; }
-
-        ////public bool IsNegative { get; set; }
+        public event EventHandler<bool> EnabledChanged;
 
         protected virtual void OnEnabledChanged(bool e)
         {
-            this.EnabledChanged?.Invoke(this, e);
+            var handler = this.EnabledChanged;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

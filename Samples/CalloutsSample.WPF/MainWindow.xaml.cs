@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using System.Windows.Controls;
 
 using CrossPlatformLibrary.Callouts;
@@ -28,15 +29,17 @@ namespace CalloutSample.WPF
 
         private void Button_OnClick_ContentCallout(object sender, RoutedEventArgs e)
         {
+            var okButtonConfig = new ButtonConfig("I Agree", () => { Debug.WriteLine("Agreed!"); }, isEnabled: false);
+            var cancelButtonConfig = new ButtonConfig("I Decline", () => { Debug.WriteLine("Disagreed!"); });
+            var buttonConfigs = new[] { okButtonConfig, cancelButtonConfig };
+
             var panel = new StackPanel();
-
             panel.Children.Add(new TextBlock { Text = "This is a short message.", TextWrapping = TextWrapping.Wrap, });
-
+            
             var checkBox = new CheckBox { Content = "Agree" };
-            checkBox.Checked += (o, args) => { };
+            checkBox.Checked += (o, args) => { okButtonConfig.IsEnabled = true; };
+            checkBox.Unchecked += (o, args) => { okButtonConfig.IsEnabled = false; };
             panel.Children.Add(checkBox);
-
-            var buttonConfigs = new[] { new ButtonConfig("I Agree", () => { }), new ButtonConfig("I Decline") };
 
             this.callout.Show(
                 this.CaptionTextBox.Text,
