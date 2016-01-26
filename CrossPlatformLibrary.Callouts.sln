@@ -63,6 +63,9 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{8fec12e4-2e8e-4f30-ac68-2148bf6bb460}*SharedItemsImports = 13
+		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{71033a11-8395-47a6-bd8f-6f0224158332}*SharedItemsImports = 4
+		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{c7245abf-c0c0-4cca-a6e3-393cfafe0bfc}*SharedItemsImports = 4
+		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{14e5991c-f1c7-4c44-8407-bbc99be19269}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

@@ -94,14 +94,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CalloutsSample.WindowsStore81\App.xaml.cs">
-      <Link>App.xaml.cs</Link>
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="..\CalloutsSample.WindowsStore81\MainPage.xaml.cs">
-      <Link>MainPage.xaml.cs</Link>
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,18 +113,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="..\CalloutsSample.WindowsStore81\App.xaml">
-      <Link>App.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="..\CalloutsSample.WindowsStore81\MainPage.xaml">
-      <Link>MainPage.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\CrossPlatformLibrary.Callouts.UWP\CrossPlatformLibrary.Callouts.UWP.csproj">
       <Project>{b04a158e-ba6e-4c57-99df-c2a452dc8d71}</Project>
       <Name>CrossPlatformLibrary.Callouts.UWP</Name>
@@ -142,6 +122,7 @@
       <Name>CrossPlatformLibrary.Callouts</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
