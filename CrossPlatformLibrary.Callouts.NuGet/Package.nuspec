@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>CrossPlatformLibrary.Callouts</id>
-    <version>1.0.0-pre4</version>
+    <version>1.0.0-pre6</version>
     <title>CrossPlatformLibrary.Callouts</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -21,32 +21,7 @@
     <copyright>Copyright 2016</copyright>
     <language>en-US</language>
     <dependencies>
-      <group targetFramework="monotouch10">
-        <dependency id="Guards" version="1.0.10" />
-        <dependency id="CrossPlatformLibrary" version="1.0.71" />
-      </group>
-      <group targetFramework="xamarin.ios10">
-        <dependency id="Guards" version="1.0.10" />
-        <dependency id="CrossPlatformLibrary" version="1.0.71" />
-      </group>
-      <group targetFramework="monoandroid10">
-        <dependency id="Guards" version="1.0.10" />
-        <dependency id="CrossPlatformLibrary" version="1.0.71" />
-      </group>
-      <group targetFramework="wp8">
-        <dependency id="Guards" version="1.0.10" />
-        <dependency id="CrossPlatformLibrary" version="1.0.71" />
-        <dependency id="WPtoolkit" version="4.2013.08.16" />
-      </group>
-      <group targetFramework="wpa81">
-        <dependency id="Guards" version="1.0.10" />
-        <dependency id="CrossPlatformLibrary" version="1.0.71" />
-      </group>
-      <group targetFramework="win81">
-        <dependency id="Guards" version="1.0.10" />
-        <dependency id="CrossPlatformLibrary" version="1.0.71" />
-      </group>
-      <group targetFramework="portable-net45+dnxcore50+wp80+wpa81+win81+netcore45+monoandroid10+monotouch10+xamarin.ios10">
+      <group>
         <dependency id="Guards" version="1.0.10" />
         <dependency id="CrossPlatformLibrary" version="1.0.71" />
       </group>
@@ -102,6 +77,14 @@
     <file src="..\CrossPlatformLibrary.Callouts.WindowsStore\Bin\Release\CrossPlatformLibrary.Callouts.Platform.dll" target="lib\win81\CrossPlatformLibrary.Callouts.Platform.dll" />
     <file src="..\CrossPlatformLibrary.Callouts.WindowsStore\Bin\Release\CrossPlatformLibrary.Callouts.Platform.pdb" target="lib\win81\CrossPlatformLibrary.Callouts.Platform.pdb" />
     <file src="..\CrossPlatformLibrary.Callouts.WindowsStore\Bin\Release\CrossPlatformLibrary.Callouts.Platform.xml" target="lib\win81\CrossPlatformLibrary.Callouts.Platform.xml" />
+    <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.dll" target="lib\win81\CrossPlatformLibrary.Callouts.dll" />
+    <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.pdb" target="lib\win81\CrossPlatformLibrary.Callouts.pdb" />
+    <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.xml" target="lib\win81\CrossPlatformLibrary.Callouts.xml" />
+    
+    <!--Universal Windows Platform-->
+    <file src="..\CrossPlatformLibrary.Callouts.UWP\bin\Release\CrossPlatformLibrary.Callouts.Platform.dll" target="lib\uap10.0\CrossPlatformLibrary.Callouts.Platform.dll" />
+    <file src="..\CrossPlatformLibrary.Callouts.UWP\bin\Release\CrossPlatformLibrary.Callouts.Platform.pdb" target="lib\uap10.0\CrossPlatformLibrary.Callouts.Platform.pdb" />
+    <file src="..\CrossPlatformLibrary.Callouts.UWP\bin\Release\CrossPlatformLibrary.Callouts.Platform.xml" target="lib\uap10.0\CrossPlatformLibrary.Callouts.Platform.xml" />
     <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.dll" target="lib\win81\CrossPlatformLibrary.Callouts.dll" />
     <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.pdb" target="lib\win81\CrossPlatformLibrary.Callouts.pdb" />
     <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.xml" target="lib\win81\CrossPlatformLibrary.Callouts.xml" />
