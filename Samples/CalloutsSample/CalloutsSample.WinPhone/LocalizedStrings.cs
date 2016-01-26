@@ -1,6 +1,6 @@
-﻿using CalloutsSample.WinPhone.Resources;
+﻿using CalloutsSample.Forms.WindowsPhone8.Resources;
 
-namespace CalloutsSample.WinPhone
+namespace CalloutsSample.Forms.WindowsPhone8
 {
     /// <summary>
     /// Provides access to string resources.

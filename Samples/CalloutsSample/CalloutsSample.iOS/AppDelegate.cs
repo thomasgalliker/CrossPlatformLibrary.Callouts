@@ -5,7 +5,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-namespace CalloutsSample.iOS
+namespace CalloutsSample.Forms.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -22,7 +22,7 @@ namespace CalloutsSample.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Forms.Init();
+            Xamarin.Forms.Forms.Init();
             this.LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

@@ -1,5 +1,5 @@
 ﻿<winPhone:FormsApplicationPage
-    x:Class="CalloutsSample.WinPhone.MainPage"
+    x:Class="CalloutsSample.Forms.WindowsPhone8.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"

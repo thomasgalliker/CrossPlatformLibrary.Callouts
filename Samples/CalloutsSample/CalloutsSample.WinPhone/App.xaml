@@ -1,13 +1,14 @@
 ﻿<Application
-    x:Class="CalloutsSample.WinPhone.App"
+    x:Class="CalloutsSample.Forms.WindowsPhone8.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:windowsPhone8="clr-namespace:CalloutsSample.Forms.WindowsPhone8">
 
     <!--Application Resources-->
     <Application.Resources>
-        <local:LocalizedStrings xmlns:local="clr-namespace:CalloutsSample.WinPhone" x:Key="LocalizedStrings"/>
+        <windowsPhone8:LocalizedStrings x:Key="LocalizedStrings"/>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

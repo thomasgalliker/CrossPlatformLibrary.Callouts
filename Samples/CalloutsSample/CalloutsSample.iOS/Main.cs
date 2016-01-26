@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace CalloutsSample.iOS
+namespace CalloutsSample.Forms.iOS
 {
     public class Application
     {

@@ -8,11 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CalloutsSample.WinPhone.Resources
+namespace CalloutsSample.Forms.WindowsPhone8.Resources
 {
-    using System;
-
-
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>

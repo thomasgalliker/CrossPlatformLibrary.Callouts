@@ -8,7 +8,7 @@
     <ProjectGuid>{BC4D35CA-9335-4A75-972C-FA70A0FC0BD0}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CalloutsSample.iOS</RootNamespace>
+    <RootNamespace>CalloutsSample.Forms.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>CalloutsSampleiOS</AssemblyName>
     <NuGetPackageImportStamp>
@@ -109,8 +109,9 @@
       <Project>{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}</Project>
       <Name>CrossPlatformLibrary.Callouts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CalloutsSample\CalloutsSample.csproj">
-      <Name>CalloutsSample</Name>
+    <ProjectReference Include="..\CalloutsSample\CalloutsSample.Forms.csproj">
+      <Project>{70a9e1c9-514b-4d5e-8c3c-d511909afac0}</Project>
+      <Name>CalloutsSample.Forms</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
