@@ -5,9 +5,11 @@ using CrossPlatformLibrary.Dispatching;
 using Guards;
 
 #if __UNIFIED__
+using Foundation;
 using UIKit;
 using CoreGraphics;
 #else
+using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 #endif
 
@@ -45,12 +47,22 @@ namespace CrossPlatformLibrary.Callouts
                 var view = content as UIView;
                 if (view != null)
                 {
-                    alertController.View.AddSubview(view);
+                    UIViewController v = new UIViewController();
+                    v.View = view;
+                    alertController.SetValueForKey(v, new NSString("contentViewController"));
+
+                    //alertController.View.AddSubview(view);
                 }
 
                 foreach (var buttonConfig in buttonConfigs)
                 {
-                    alertController.AddAction(UIAlertAction.Create(buttonConfig.Text, UIAlertActionStyle.Default, x => buttonConfig.Action()));
+                    var alertAction = UIAlertAction.Create(buttonConfig.Text, UIAlertActionStyle.Default, x => buttonConfig.Action());
+
+                    EventHandler<bool> buttonConfigOnEnabledChanged = null;
+                    buttonConfigOnEnabledChanged = (sender, isEnabled) => { alertAction.Enabled = isEnabled; };
+                    buttonConfig.EnabledChanged += buttonConfigOnEnabledChanged;
+                    alertAction.Enabled = buttonConfig.IsEnabled;
+                    alertController.AddAction(alertAction);
                 }
 
                 this.dispatcherService.CheckBeginInvokeOnUI(() => { UIApplication.SharedApplication.PresentInternal(alertController); });
