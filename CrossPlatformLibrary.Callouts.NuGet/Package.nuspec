@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>CrossPlatformLibrary.Callouts</id>
-    <version>1.0.0-pre7</version>
+    <version>1.0.0-pre8</version>
     <title>CrossPlatformLibrary.Callouts</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -22,8 +22,8 @@
     <language>en-US</language>
     <dependencies>
       <group>
-        <dependency id="Guards" version="1.0.10" />
-        <dependency id="CrossPlatformLibrary" version="1.0.71" />
+        <dependency id="Guards" version="1.0.11" />
+        <dependency id="CrossPlatformLibrary" version="1.0.73" />
       </group>
     </dependencies>
   </metadata>
@@ -56,6 +56,14 @@
     <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.dll" target="lib\xamarin.ios10\CrossPlatformLibrary.Callouts.dll" />
     <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.pdb" target="lib\xamarin.ios10\CrossPlatformLibrary.Callouts.pdb" />
     <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.xml" target="lib\xamarin.ios10\CrossPlatformLibrary.Callouts.xml" />
+    
+    <!--Net45-->
+    <file src="..\CrossPlatformLibrary.Callouts.Netfx\bin\Release\CrossPlatformLibrary.Callouts.Platform.dll" target="lib\net45\CrossPlatformLibrary.Callouts.Platform.dll" />
+    <file src="..\CrossPlatformLibrary.Callouts.Netfx\bin\Release\CrossPlatformLibrary.Callouts.Platform.pdb" target="lib\net45\CrossPlatformLibrary.Callouts.Platform.pdb" />
+    <file src="..\CrossPlatformLibrary.Callouts.Netfx\bin\Release\CrossPlatformLibrary.Callouts.Platform.xml" target="lib\net45\CrossPlatformLibrary.Callouts.Platform.xml" />
+    <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.dll" target="lib\net45\CrossPlatformLibrary.Callouts.dll" />
+    <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.pdb" target="lib\net45\CrossPlatformLibrary.Callouts.pdb" />
+    <file src="..\CrossPlatformLibrary.Callouts\bin\Release\CrossPlatformLibrary.Callouts.xml" target="lib\net45\CrossPlatformLibrary.Callouts.xml" />
     
     <!--Windows Phone 8-->
     <file src="..\CrossPlatformLibrary.Callouts.WindowsPhone8\Bin\Release\CrossPlatformLibrary.Callouts.Platform.dll" target="lib\wp8\CrossPlatformLibrary.Callouts.Platform.dll" />
