@@ -1,5 +1,4 @@
 ﻿using CrossPlatformLibrary.Bootstrapping;
-using CrossPlatformLibrary.IoC;
 
 using Xamarin.Forms;
 
@@ -12,7 +11,7 @@ namespace CalloutsSample.Forms
         public App()
         {
             this.bootstrapper = new Bootstrapper();
-           
+
             this.MainPage = new NavigationPage(new DemoPage());
         }
 

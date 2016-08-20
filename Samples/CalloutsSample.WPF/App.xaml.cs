@@ -11,7 +11,12 @@ namespace CalloutSample.WPF
         public App()
         {
             this.bootstrapper = new Bootstrapper();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
             this.bootstrapper.Startup();
+            base.OnStartup(e);
         }
 
         protected override void OnExit(ExitEventArgs e)

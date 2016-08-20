@@ -4,7 +4,6 @@ using Android.App;
 using Android.Content;
 using Android.Util;
 using Android.Views;
-using Android.Widget;
 
 using CrossPlatformLibrary.Dispatching;
 
@@ -14,11 +13,12 @@ using Java.Lang;
 using Java.Lang.Reflect;
 
 using Exception = System.Exception;
+using Object = Java.Lang.Object;
 
 namespace CrossPlatformLibrary.Callouts
 {
     /// <summary>
-    /// Callout implementation for Android.
+    ///     Callout implementation for Android.
     /// </summary>
     public class Callout : CalloutBase
     {
@@ -76,7 +76,6 @@ namespace CrossPlatformLibrary.Callouts
                 negativeButton = buttonConfigs[1];
                 alertBuilder.SetNegativeButton(negativeButton.Text, (senderAlert, args) => { negativeButton.Action(); });
                 negativeButton.EnabledChanged += (sender, isEnabled) => { UpdateEnabledChanged(alertDialog, DialogButtonType.Negative, isEnabled); };
-
             }
             if (buttonConfigs.Length == 3)
             {
@@ -114,18 +113,18 @@ namespace CrossPlatformLibrary.Callouts
         }
 
         /// <summary>
-        /// Gets the current activity.
-        /// The inspiration for this code came from here:
-        /// http://stackoverflow.com/questions/11411395/how-to-get-current-foreground-activity-context-in-android
+        ///     Gets the current activity.
+        ///     The inspiration for this code came from here:
+        ///     http://stackoverflow.com/questions/11411395/how-to-get-current-foreground-activity-context-in-android
         /// </summary>
         private static Activity GetActivity()
         {
             Class activityThreadClass = Class.ForName("android.app.ActivityThread");
-            Java.Lang.Object activityThread = activityThreadClass.GetMethod("currentActivityThread").Invoke(null);
+            Object activityThread = activityThreadClass.GetMethod("currentActivityThread").Invoke(null);
             var activitiesField = activityThreadClass.GetDeclaredField("mActivities");
             activitiesField.Accessible = true;
             ArrayMap activities = (ArrayMap)activitiesField.Get(activityThread);
-            foreach (Java.Lang.Object activityRecord in activities.Values())
+            foreach (Object activityRecord in activities.Values())
             {
                 try
                 {
@@ -142,9 +141,7 @@ namespace CrossPlatformLibrary.Callouts
                 }
                 catch (Exception)
                 {
-
                 }
-
             }
 
             return null;

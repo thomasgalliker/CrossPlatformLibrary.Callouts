@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CrossPlatformLibrary.Callouts</RootNamespace>
-    <AssemblyName>CrossPlatformLibrary.Callouts.Platform</AssemblyName>
+    <AssemblyName>CrossPlatformLibrary.Callouts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -29,15 +29,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\CrossPlatformLibrary.Callouts.Platform.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\CrossPlatformLibrary.Callouts.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrossPlatformLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrossPlatformLibrary.1.0.73\lib\net45\CrossPlatformLibrary.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CrossPlatformLibrary.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrossPlatformLibrary.1.0.73\lib\net45\CrossPlatformLibrary.Platform.dll</HintPath>
+    <Reference Include="CrossPlatformLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrossPlatformLibrary.2.0.0-pre6\lib\net45\CrossPlatformLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Guards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ac6aedb73a72f46e, processorArchitecture=MSIL">
@@ -46,10 +42,6 @@
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PlatformAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6631b0d7444ed877, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrossPlatformAdapter.1.0.12\lib\portable-net45+wp8+wpa81+win81+netcore45+monoandroid1+xamarin.ios10\PlatformAdapter.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
@@ -64,6 +56,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tracing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tracing.1.0.2\lib\net45\Tracing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -76,12 +72,6 @@
     <Compile Include="CustomMessageBox\TextAndImage.cs" />
     <Compile Include="CustomMessageBox\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CrossPlatformLibrary.Callouts\CrossPlatformLibrary.Callouts.csproj">
-      <Project>{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}</Project>
-      <Name>CrossPlatformLibrary.Callouts</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
@@ -97,6 +87,7 @@
   <ItemGroup>
     <Resource Include="CustomMessageBox\blankicon.ico" />
   </ItemGroup>
+  <Import Project="..\CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -102,17 +102,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\..\CrossPlatformLibrary.Callouts.WindowsStore\CrossPlatformLibrary.Callouts.WindowsStore.csproj">
-      <Project>{ed9a4ca1-c04c-457d-9a2e-7995ccf12356}</Project>
-      <Name>CrossPlatformLibrary.Callouts.WindowsStore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CrossPlatformLibrary.Callouts\CrossPlatformLibrary.Callouts.csproj">
-      <Project>{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}</Project>
-      <Name>CrossPlatformLibrary.Callouts</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,12 +118,12 @@
     <Content Include="Assets\StoreLogo.scale-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CrossPlatformLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CrossPlatformLibrary.1.0.73\lib\win81\CrossPlatformLibrary.dll</HintPath>
+    <Reference Include="CrossPlatformLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrossPlatformLibrary.2.0.0-pre6\lib\win81\CrossPlatformLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CrossPlatformLibrary.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CrossPlatformLibrary.1.0.73\lib\win81\CrossPlatformLibrary.Platform.dll</HintPath>
+    <Reference Include="CrossPlatformLibrary.Callouts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrossPlatformLibrary.Callouts.2.0.0-pre2\lib\win81\CrossPlatformLibrary.Callouts.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Guards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ac6aedb73a72f46e, processorArchitecture=MSIL">
@@ -145,8 +134,8 @@
       <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PlatformAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6631b0d7444ed877, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CrossPlatformAdapter.1.0.12\lib\win81\PlatformAdapter.dll</HintPath>
+    <Reference Include="Tracing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Tracing.1.0.2\lib\win81\Tracing.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

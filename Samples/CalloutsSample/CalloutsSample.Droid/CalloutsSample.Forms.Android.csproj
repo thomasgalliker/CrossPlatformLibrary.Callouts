@@ -48,12 +48,12 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrossPlatformLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\CrossPlatformLibrary.1.0.73\lib\MonoAndroid10\CrossPlatformLibrary.dll</HintPath>
+    <Reference Include="CrossPlatformLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\CrossPlatformLibrary.2.0.0-pre6\lib\MonoAndroid10\CrossPlatformLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CrossPlatformLibrary.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\CrossPlatformLibrary.1.0.73\lib\MonoAndroid10\CrossPlatformLibrary.Platform.dll</HintPath>
+    <Reference Include="CrossPlatformLibrary.Callouts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\CrossPlatformLibrary.Callouts.2.0.0-pre2\lib\monoandroid10\CrossPlatformLibrary.Callouts.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FormsViewGroup, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -70,14 +70,14 @@
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="PlatformAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6631b0d7444ed877, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\CrossPlatformAdapter.1.0.12\lib\MonoAndroid10\PlatformAdapter.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tracing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Tracing.1.0.2\lib\monoandroid10\Tracing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Xamarin.Android.Support.v4.21.0.3.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
       <Private>True</Private>
@@ -117,14 +117,6 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CrossPlatformLibrary.Callouts.Android\CrossPlatformLibrary.Callouts.Android.csproj">
-      <Project>{56a56f17-7de1-4ca1-9617-bf32e971ac84}</Project>
-      <Name>CrossPlatformLibrary.Callouts.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\CrossPlatformLibrary.Callouts\CrossPlatformLibrary.Callouts.csproj">
-      <Project>{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}</Project>
-      <Name>CrossPlatformLibrary.Callouts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CalloutsSample\CalloutsSample.Forms.csproj">
       <Name>CalloutsSample.Forms</Name>
       <Project>{70A9E1C9-514B-4D5E-8C3C-D511909AFAC0}</Project>

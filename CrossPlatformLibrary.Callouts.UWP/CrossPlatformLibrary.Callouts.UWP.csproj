@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CrossPlatformLibrary.Callouts</RootNamespace>
-    <AssemblyName>CrossPlatformLibrary.Callouts.Platform</AssemblyName>
+    <AssemblyName>CrossPlatformLibrary.Callouts</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -35,7 +35,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\CrossPlatformLibrary.Callouts.Platform.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\CrossPlatformLibrary.Callouts.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -111,13 +111,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\CrossPlatformLibrary.Callouts.UWP.rd.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CrossPlatformLibrary.Callouts\CrossPlatformLibrary.Callouts.csproj">
-      <Project>{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}</Project>
-      <Name>CrossPlatformLibrary.Callouts</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="..\CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems" Label="Shared" />
+  <Import Project="..\CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

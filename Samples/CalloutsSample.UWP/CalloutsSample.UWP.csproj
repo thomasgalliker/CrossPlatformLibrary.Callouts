@@ -112,16 +112,6 @@
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\CrossPlatformLibrary.Callouts.UWP\CrossPlatformLibrary.Callouts.UWP.csproj">
-      <Project>{b04a158e-ba6e-4c57-99df-c2a452dc8d71}</Project>
-      <Name>CrossPlatformLibrary.Callouts.UWP</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CrossPlatformLibrary.Callouts\CrossPlatformLibrary.Callouts.csproj">
-      <Project>{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}</Project>
-      <Name>CrossPlatformLibrary.Callouts</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="..\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

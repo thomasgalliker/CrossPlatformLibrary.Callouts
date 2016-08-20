@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>b123f026-c5a4-48d8-aaa3-4bd6baf0f091</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CrossPlatformLibrary.Callouts</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ButtonConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CalloutBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ContainerExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICallout.cs" />
+  </ItemGroup>
+</Project>
