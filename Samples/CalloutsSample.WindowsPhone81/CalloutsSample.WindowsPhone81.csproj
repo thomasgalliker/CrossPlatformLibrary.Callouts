@@ -100,7 +100,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="CrossPlatformLibrary.Callouts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CrossPlatformLibrary.Callouts.2.0.0-pre2\lib\wpa81\CrossPlatformLibrary.Callouts.dll</HintPath>
+      <HintPath>..\..\packages\CrossPlatformLibrary.Callouts.2.0.0-pre3\lib\wpa81\CrossPlatformLibrary.Callouts.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Guards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ac6aedb73a72f46e, processorArchitecture=MSIL">

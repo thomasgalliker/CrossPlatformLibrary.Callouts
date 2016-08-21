@@ -26,7 +26,7 @@
           "lib/uap10.0/CrossPlatformLibrary.dll": {}
         }
       },
-      "CrossPlatformLibrary.Callouts/2.0.0-pre2": {
+      "CrossPlatformLibrary.Callouts/2.0.0-pre3": {
         "type": "package",
         "dependencies": {
           "CrossPlatformLibrary": "[1.9.99, 2.0.0)",
@@ -2220,7 +2220,7 @@
           "lib/uap10.0/CrossPlatformLibrary.dll": {}
         }
       },
-      "CrossPlatformLibrary.Callouts/2.0.0-pre2": {
+      "CrossPlatformLibrary.Callouts/2.0.0-pre3": {
         "type": "package",
         "dependencies": {
           "CrossPlatformLibrary": "[1.9.99, 2.0.0)",
@@ -4522,7 +4522,7 @@
           "lib/uap10.0/CrossPlatformLibrary.dll": {}
         }
       },
-      "CrossPlatformLibrary.Callouts/2.0.0-pre2": {
+      "CrossPlatformLibrary.Callouts/2.0.0-pre3": {
         "type": "package",
         "dependencies": {
           "CrossPlatformLibrary": "[1.9.99, 2.0.0)",
@@ -6863,7 +6863,7 @@
           "lib/uap10.0/CrossPlatformLibrary.dll": {}
         }
       },
-      "CrossPlatformLibrary.Callouts/2.0.0-pre2": {
+      "CrossPlatformLibrary.Callouts/2.0.0-pre3": {
         "type": "package",
         "dependencies": {
           "CrossPlatformLibrary": "[1.9.99, 2.0.0)",
@@ -9174,7 +9174,7 @@
           "lib/uap10.0/CrossPlatformLibrary.dll": {}
         }
       },
-      "CrossPlatformLibrary.Callouts/2.0.0-pre2": {
+      "CrossPlatformLibrary.Callouts/2.0.0-pre3": {
         "type": "package",
         "dependencies": {
           "CrossPlatformLibrary": "[1.9.99, 2.0.0)",
@@ -11524,7 +11524,7 @@
           "lib/uap10.0/CrossPlatformLibrary.dll": {}
         }
       },
-      "CrossPlatformLibrary.Callouts/2.0.0-pre2": {
+      "CrossPlatformLibrary.Callouts/2.0.0-pre3": {
         "type": "package",
         "dependencies": {
           "CrossPlatformLibrary": "[1.9.99, 2.0.0)",
@@ -13835,7 +13835,7 @@
           "lib/uap10.0/CrossPlatformLibrary.dll": {}
         }
       },
-      "CrossPlatformLibrary.Callouts/2.0.0-pre2": {
+      "CrossPlatformLibrary.Callouts/2.0.0-pre3": {
         "type": "package",
         "dependencies": {
           "CrossPlatformLibrary": "[1.9.99, 2.0.0)",
@@ -16218,11 +16218,11 @@
         "tools/uninstall.ps1"
       ]
     },
-    "CrossPlatformLibrary.Callouts/2.0.0-pre2": {
-      "sha512": "l27fF5co7NLHAIe+fftQa0eDCVIwKYanMrTBM7plIGQKxhND+zZlQV5vXOLbuHA7IooaAyoN28PPWLwbS5CGJA==",
+    "CrossPlatformLibrary.Callouts/2.0.0-pre3": {
+      "sha512": "h4FvYdVBIC7pRMT8lA9+DeLXQZgo22/hgAvX9MxqIbEij6jsSGHdsn7jEpJ3is8EvNLt2Gm1ke9kmnPNZrxoBQ==",
       "type": "package",
       "files": [
-        "CrossPlatformLibrary.Callouts.2.0.0-pre2.nupkg.sha512",
+        "CrossPlatformLibrary.Callouts.2.0.0-pre3.nupkg.sha512",
         "CrossPlatformLibrary.Callouts.nuspec",
         "lib/monoandroid10/CrossPlatformLibrary.Callouts.dll",
         "lib/monoandroid10/CrossPlatformLibrary.Callouts.pdb",
@@ -22334,7 +22334,7 @@
   "projectFileDependencyGroups": {
     "": [
       "CrossPlatformLibrary >= 2.0.0-pre6",
-      "CrossPlatformLibrary.Callouts >= 2.0.0-pre2",
+      "CrossPlatformLibrary.Callouts >= 2.0.0-pre3",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2"
     ],
     "UAP,Version=v10.0": []
