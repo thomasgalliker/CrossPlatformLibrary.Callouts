@@ -58,30 +58,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalloutsSample.UWP", "Sampl
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CalloutsSample.WinRT.Shared", "Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.shproj", "{8FEC12E4-2E8E-4F30-AC68-2148BF6BB460}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CrossPlatformLibrary.Callouts.WinRT.Shared", "CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.shproj", "{2FB36559-0417-4600-81A2-9C4E48D5436E}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CrossPlatformLibrary.Callouts.Shared", "CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.shproj", "{B123F026-C5A4-48D8-AAA3-4BD6BAF0F091}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CrossPlatformLibrary.Callouts.Shared.WinRT", "CrossPlatformLibrary.Callouts.Shared.WinRT\CrossPlatformLibrary.Callouts.Shared.WinRT.shproj", "{0E99FB43-6B83-4EDB-B7C2-A2D561F7B20D}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CrossPlatformLibrary.Callouts.Shared.WinRT\CrossPlatformLibrary.Callouts.Shared.WinRT.projitems*{0e99fb43-6b83-4edb-b7c2-a2d561f7b20d}*SharedItemsImports = 13
 		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{14e5991c-f1c7-4c44-8407-bbc99be19269}*SharedItemsImports = 4
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{2882aeeb-d4cd-4eb9-8a6c-6653b33681f0}*SharedItemsImports = 4
-		CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems*{2fb36559-0417-4600-81a2-9c4e48d5436e}*SharedItemsImports = 13
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{56a56f17-7de1-4ca1-9617-bf32e971ac84}*SharedItemsImports = 4
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{5876144b-47dd-4c4e-b421-bc03f191b996}*SharedItemsImports = 4
 		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{71033a11-8395-47a6-bd8f-6f0224158332}*SharedItemsImports = 4
+		CrossPlatformLibrary.Callouts.Shared.WinRT\CrossPlatformLibrary.Callouts.Shared.WinRT.projitems*{7169373f-0b82-4e5d-9129-7cc3065b90fa}*SharedItemsImports = 4
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{7169373f-0b82-4e5d-9129-7cc3065b90fa}*SharedItemsImports = 4
-		CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems*{7169373f-0b82-4e5d-9129-7cc3065b90fa}*SharedItemsImports = 4
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{8f55a307-9930-46bb-93f8-16c59f71c8ad}*SharedItemsImports = 4
 		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{8fec12e4-2e8e-4f30-ac68-2148bf6bb460}*SharedItemsImports = 13
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{a6fcef44-d2ba-42c7-b3cb-13667bcd7b54}*SharedItemsImports = 4
+		CrossPlatformLibrary.Callouts.Shared.WinRT\CrossPlatformLibrary.Callouts.Shared.WinRT.projitems*{b04a158e-ba6e-4c57-99df-c2a452dc8d71}*SharedItemsImports = 4
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{b04a158e-ba6e-4c57-99df-c2a452dc8d71}*SharedItemsImports = 4
-		CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems*{b04a158e-ba6e-4c57-99df-c2a452dc8d71}*SharedItemsImports = 4
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{b123f026-c5a4-48d8-aaa3-4bd6baf0f091}*SharedItemsImports = 13
 		Samples\CalloutsSample.WinRT.Shared\CalloutsSample.WinRT.Shared.projitems*{c7245abf-c0c0-4cca-a6e3-393cfafe0bfc}*SharedItemsImports = 4
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{d7f3aa16-8ef1-4924-9e0a-dad4ab46b2eb}*SharedItemsImports = 4
+		CrossPlatformLibrary.Callouts.Shared.WinRT\CrossPlatformLibrary.Callouts.Shared.WinRT.projitems*{ed9a4ca1-c04c-457d-9a2e-7995ccf12356}*SharedItemsImports = 4
 		CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems*{ed9a4ca1-c04c-457d-9a2e-7995ccf12356}*SharedItemsImports = 4
-		CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems*{ed9a4ca1-c04c-457d-9a2e-7995ccf12356}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

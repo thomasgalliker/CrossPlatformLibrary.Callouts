@@ -111,7 +111,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\CrossPlatformLibrary.Callouts.UWP.rd.xml" />
   </ItemGroup>
-  <Import Project="..\CrossPlatformLibrary.Callouts.WinRT.Shared\CrossPlatformLibrary.Callouts.WinRT.Shared.projitems" Label="Shared" />
+  <Import Project="..\CrossPlatformLibrary.Callouts.Shared.WinRT\CrossPlatformLibrary.Callouts.Shared.WinRT.projitems" Label="Shared" />
   <Import Project="..\CrossPlatformLibrary.Callouts.Shared\CrossPlatformLibrary.Callouts.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
