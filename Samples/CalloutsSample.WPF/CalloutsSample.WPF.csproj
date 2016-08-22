@@ -39,7 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrossPlatformLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CrossPlatformLibrary.2.0.0-pre6\lib\net45\CrossPlatformLibrary.dll</HintPath>
+      <HintPath>..\..\packages\CrossPlatformLibrary.2.0.0-pre7\lib\net45\CrossPlatformLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CrossPlatformLibrary.Callouts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -118,12 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CalloutsSample\CalloutsSample\CalloutsSample.Forms.csproj">
-      <Project>{70a9e1c9-514b-4d5e-8c3c-d511909afac0}</Project>
-      <Name>CalloutsSample.Forms</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

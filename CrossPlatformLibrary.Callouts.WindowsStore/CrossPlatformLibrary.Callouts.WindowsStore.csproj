@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="CrossPlatformLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrossPlatformLibrary.2.0.0-pre6\lib\win81\CrossPlatformLibrary.dll</HintPath>
+      <HintPath>..\packages\CrossPlatformLibrary.2.0.0-pre7\lib\win81\CrossPlatformLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Guards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ac6aedb73a72f46e, processorArchitecture=MSIL">
