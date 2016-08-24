@@ -2,12 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>CrossPlatformLibrary.Callouts</id>
-    <version>2.0.0-pre3</version>
+    <version>2.0.0-pre4</version>
     <title>CrossPlatformLibrary.Callouts</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
     <projectUrl>https://github.com/thomasgalliker/CrossPlatformLibrary.Callouts</projectUrl>
-    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/thomasgalliker/CrossPlatformLibrary.Callouts/master/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>CrossPlatformLibrary.Callouts is a cross-platform abstraction for message boxes, toasts, callouts.</summary>
     <description>CrossPlatformLibrary.Callouts is a cross-platform abstraction for message boxes, toasts, callouts.</description>
