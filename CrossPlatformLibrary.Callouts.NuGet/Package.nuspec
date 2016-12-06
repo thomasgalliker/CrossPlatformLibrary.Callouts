@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>CrossPlatformLibrary.Callouts</id>
-    <version>2.0.0-pre4</version>
+    <version>2.0.0-pre5</version>
     <title>CrossPlatformLibrary.Callouts</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -26,8 +26,8 @@
     <language>en-US</language>
     <dependencies>
       <group>
-        <dependency id="CrossPlatformLibrary" version="[1.9.99, 2.0.0)" />
-        <dependency id="Guards" version="1.0.11" />
+        <dependency id="CrossPlatformLibrary" version="[2.0.0,)" />
+        <dependency id="Guards" version="[1.0.11,)" />
       </group>
     </dependencies>
   </metadata>
@@ -41,11 +41,6 @@
     <file src="..\CrossPlatformLibrary.Callouts.Android\bin\Release\CrossPlatformLibrary.Callouts.dll" target="lib\monoandroid10\CrossPlatformLibrary.Callouts.dll" />
     <file src="..\CrossPlatformLibrary.Callouts.Android\bin\Release\CrossPlatformLibrary.Callouts.pdb" target="lib\monoandroid10\CrossPlatformLibrary.Callouts.pdb" />
     <file src="..\CrossPlatformLibrary.Callouts.Android\bin\Release\CrossPlatformLibrary.Callouts.xml" target="lib\monoandroid10\CrossPlatformLibrary.Callouts.xml" />
-
-    <!--Xamarin.iOS Classic API-->
-    <file src="..\CrossPlatformLibrary.Callouts.iOS\bin\iPhone\Release\CrossPlatformLibrary.Callouts.dll" target="lib\monotouch10\CrossPlatformLibrary.Callouts.dll" />
-    <file src="..\CrossPlatformLibrary.Callouts.iOS\bin\iPhone\Release\CrossPlatformLibrary.Callouts.pdb" target="lib\monotouch10\CrossPlatformLibrary.Callouts.pdb" />
-    <file src="..\CrossPlatformLibrary.Callouts.iOS\bin\iPhone\Release\CrossPlatformLibrary.Callouts.xml" target="lib\monotouch10\CrossPlatformLibrary.Callouts.xml" />
 
     <!--Xamarin.iOS Unified API-->
     <file src="..\CrossPlatformLibrary.Callouts.iOSUnified\bin\iPhone\Release\CrossPlatformLibrary.Callouts.dll" target="lib\xamarin.ios10\CrossPlatformLibrary.Callouts.dll" />
